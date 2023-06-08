@@ -1,0 +1,13 @@
+tqdm
+pandas
+numpy
+scipy
+seaborn
+plotly
+regex
+trino
+requests
+sqlalchemy
+scikit-learn
+statsmodels
+matplotlib
