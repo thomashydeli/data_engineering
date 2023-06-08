@@ -4,3 +4,7 @@ env
 # data
 */ny_taxi
 */raw_data
+
+# misc
+.DS_Store
+*/.DS_Store
