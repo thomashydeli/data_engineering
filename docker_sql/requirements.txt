@@ -8,6 +8,9 @@ regex
 trino
 requests
 sqlalchemy
+pyarrow
+fastparquet
+psycopg2
 scikit-learn
 statsmodels
 matplotlib
