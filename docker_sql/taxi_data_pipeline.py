@@ -17,6 +17,15 @@ def main(args):
     data.to_sql(name=args.table_name, con=engine, if_exists='replace')
     print('data has been ingested into PG database')
 
+
+def ingestZones(args):
+    engine=create_engine(f'postgresql://{args.user}:{args.password}@{args.host}:{args.port}/{args.db}')
+    print('sql engine created')
+
+    data=pd.read_csv('taxi_zone_lookup.csv')
+    data.to_sql(name=args.table_name, con=engine, if_exists='replace')
+    print('zone data ingested successfully')
+
     
 if __name__ == '__main__':
 
@@ -29,6 +38,10 @@ if __name__ == '__main__':
     parser.add_argument('--db',help='database name for postgres')
     parser.add_argument('--table_name',help='name of table where we will write the results to')
     parser.add_argument('--url',help='url of the csv file')
+    parser.add_argument('--set_zone',help='if not None, then apply zone ingestion')
     args=parser.parse_args()
 
-    main(args)
+    if args.set_zone:
+        ingestZones(args)
+    else:
+        main(args)
