@@ -8,3 +8,8 @@ env
 # misc
 .DS_Store
 */.DS_Store
+
+# terraform
+.terraform
+.terraform.lock.hcl
+terraform.*
