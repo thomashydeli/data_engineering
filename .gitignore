@@ -4,6 +4,7 @@ env
 # data
 */ny_taxi
 */raw_data
+*/green_trip
 
 # misc
 .DS_Store
